@@ -4,48 +4,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="projects"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang"
 			name="ProjectsLang Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+					definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="uk.ac.kcl.inf.model25.projects.ProjectsLang.validate">
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="uk.ac.kcl.inf.models25.projects.ProjectsLang.validate">
 			<activeWhen>
 				<reference
-					definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+					definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened" />
+				<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.XtextEditor.opened" />
+					<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+		<definition id="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="uk.ac.kcl.inf.model25.projects.ProjectsLang"
+						value="uk.ac.kcl.inf.models25.projects.ProjectsLang"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="uk.ac.kcl.inf.model25.projects.ProjectsLang.XtextEditor.opened">
+		<definition id="uk.ac.kcl.inf.models25.projects.ProjectsLang.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="uk.ac.kcl.inf.model25.projects.ProjectsLang"
+						value="uk.ac.kcl.inf.models25.projects.ProjectsLang"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang"
 			name="ProjectsLang">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 		</page>
 		<page
-			category="uk.ac.kcl.inf.model25.projects.ProjectsLang"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.coloring"
+			category="uk.ac.kcl.inf.models25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 		</page>
 		<page
-			category="uk.ac.kcl.inf.model25.projects.ProjectsLang"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.templates"
+			category="uk.ac.kcl.inf.models25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.templates"
 			name="Templates">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang"
 			name="ProjectsLang">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"
+			id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"
 			label="ProjectsLang"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
 			description="Trigger expensive validation"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.validate"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.validate"
 			name="Validate">
 		</command>
 		<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			<command
-				commandId="uk.ac.kcl.inf.model25.projects.ProjectsLang.validate"
+				commandId="uk.ac.kcl.inf.models25.projects.ProjectsLang.validate"
 				style="push"
 				tooltip="Trigger expensive validation">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+						definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened" />
+					<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened" />
+					<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.XtextEditor.opened" />
+						<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+					<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,11 +195,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+					definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -208,7 +208,7 @@
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
 			file-extensions="projects"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.contenttype"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.contenttype"
 			name="ProjectsLang File"
 			priority="normal">
 		</content-type>
@@ -217,17 +217,17 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="projects">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="projects">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for uk.ac.kcl.inf.model25.projects.ProjectsLang -->
+	<!-- marker definitions for uk.ac.kcl.inf.models25.projects.ProjectsLang -->
 	<extension
 			id="projectslang.check.fast"
 			name="ProjectsLang Problem"
@@ -251,34 +251,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="uk.ac.kcl.inf.model25.projects.ProjectsLang"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.validator.preferencePage"
+			category="uk.ac.kcl.inf.models25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.validator.preferencePage"
 			name="Errors/Warnings">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
 			fileExtensions="projects"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="uk.ac.kcl.inf.model25.projects.ProjectsLang"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.compiler.preferencePage"
+			category="uk.ac.kcl.inf.models25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="uk.ac.kcl.inf.model25.projects.ProjectsLang"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.compiler.propertyPage"
+			category="uk.ac.kcl.inf.models25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -289,20 +289,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="uk.ac.kcl.inf.model25.projects.ProjectsLang.OpenGeneratedCode"
+				id="uk.ac.kcl.inf.models25.projects.ProjectsLang.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened" />
+					<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened" />
+				<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -310,11 +310,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+					definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -334,33 +334,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened"/>
+					<reference definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for uk.ac.kcl.inf.model25.projects.ProjectsLang -->
+	<!-- quickfix marker resolution generator for uk.ac.kcl.inf.models25.projects.ProjectsLang -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="uk.ac.kcl.inf.model25.projects.ui.projectslang.check.fast">
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="uk.ac.kcl.inf.models25.projects.ui.projectslang.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="uk.ac.kcl.inf.model25.projects.ui.projectslang.check.normal">
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="uk.ac.kcl.inf.models25.projects.ui.projectslang.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="uk.ac.kcl.inf.model25.projects.ui.projectslang.check.expensive">
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="uk.ac.kcl.inf.models25.projects.ui.projectslang.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
@@ -370,11 +370,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+					definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -386,7 +386,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="uk.ac.kcl.inf.model25.projects.ProjectsLang.Editor.opened">
+						definitionId="uk.ac.kcl.inf.models25.projects.ProjectsLang.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -394,34 +394,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="uk.ac.kcl.inf.model25.projects.ProjectsLang"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="uk.ac.kcl.inf.model25.projects.ProjectsLang.refactoring"
+			category="uk.ac.kcl.inf.models25.projects.ProjectsLang"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="uk.ac.kcl.inf.models25.projects.ProjectsLang.refactoring"
 			name="Refactoring">
-			<keywordReference id="uk.ac.kcl.inf.model25.projects.ui.keyword_ProjectsLang"/>
+			<keywordReference id="uk.ac.kcl.inf.models25.projects.ui.keyword_ProjectsLang"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="uk.ac.kcl.inf.model25.projects.ProjectsLang.compare.contentViewers"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="uk.ac.kcl.inf.models25.projects.ProjectsLang.compare.contentViewers"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="projects">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="uk.ac.kcl.inf.model25.projects.ProjectsLang.contenttype"
-			contentViewerId="uk.ac.kcl.inf.model25.projects.ProjectsLang.compare.contentViewers" />
+			contentTypeId="uk.ac.kcl.inf.models25.projects.ProjectsLang.contenttype"
+			contentViewerId="uk.ac.kcl.inf.models25.projects.ProjectsLang.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="uk.ac.kcl.inf.model25.projects.ProjectsLang.compare.contentMergeViewers"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="uk.ac.kcl.inf.models25.projects.ProjectsLang.compare.contentMergeViewers"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="projects" label="ProjectsLang Compare">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="uk.ac.kcl.inf.model25.projects.ProjectsLang.contenttype"
-			contentMergeViewerId="uk.ac.kcl.inf.model25.projects.ProjectsLang.compare.contentMergeViewers" />
+			contentTypeId="uk.ac.kcl.inf.models25.projects.ProjectsLang.contenttype"
+			contentMergeViewerId="uk.ac.kcl.inf.models25.projects.ProjectsLang.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="uk.ac.kcl.inf.model25.projects.ProjectsLang.editors.documentProviders"
-			class="uk.ac.kcl.inf.model25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+		<provider id="uk.ac.kcl.inf.models25.projects.ProjectsLang.editors.documentProviders"
+			class="uk.ac.kcl.inf.models25.projects.ui.ProjectsLangExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
 			extensions="projects">
 		</provider>
 	</extension>

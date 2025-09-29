@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: uk.ac.kcl.inf.model25.projects
+Automatic-Module-Name: uk.ac.kcl.inf.models25.projects
 Bundle-ManifestVersion: 2
-Bundle-Name: uk.ac.kcl.inf.model25.projects
+Bundle-Name: uk.ac.kcl.inf.models25.projects
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: uk.ac.kcl.inf.model25.projects; singleton:=true
+Bundle-SymbolicName: uk.ac.kcl.inf.models25.projects; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
@@ -14,15 +14,15 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.common,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: uk.ac.kcl.inf.model25.projects.services,
- uk.ac.kcl.inf.model25.projects.serializer,
- uk.ac.kcl.inf.model25.projects.generator,
- uk.ac.kcl.inf.model25.projects.projectsLang,
- uk.ac.kcl.inf.model25.projects.projectsLang.util,
- uk.ac.kcl.inf.model25.projects,
- uk.ac.kcl.inf.model25.projects.parser.antlr,
- uk.ac.kcl.inf.model25.projects.projectsLang.impl,
- uk.ac.kcl.inf.model25.projects.scoping,
- uk.ac.kcl.inf.model25.projects.parser.antlr.internal,
- uk.ac.kcl.inf.model25.projects.validation
+Export-Package: uk.ac.kcl.inf.models25.projects.services,
+ uk.ac.kcl.inf.models25.projects.serializer,
+ uk.ac.kcl.inf.models25.projects.generator,
+ uk.ac.kcl.inf.models25.projects.projectsLang,
+ uk.ac.kcl.inf.models25.projects.projectsLang.util,
+ uk.ac.kcl.inf.models25.projects,
+ uk.ac.kcl.inf.models25.projects.parser.antlr,
+ uk.ac.kcl.inf.models25.projects.projectsLang.impl,
+ uk.ac.kcl.inf.models25.projects.scoping,
+ uk.ac.kcl.inf.models25.projects.parser.antlr.internal,
+ uk.ac.kcl.inf.models25.projects.validation
 Import-Package: org.apache.log4j

@@ -1,4 +1,4 @@
-package uk.ac.kcl.inf.model25.projects.parser.antlr.internal;
+package uk.ac.kcl.inf.models25.projects.parser.antlr.internal;
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -9,7 +9,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import uk.ac.kcl.inf.model25.projects.services.ProjectsLangGrammarAccess;
+import uk.ac.kcl.inf.models25.projects.services.ProjectsLangGrammarAccess;
 
 
 
@@ -249,7 +249,7 @@ public class InternalProjectsLangParser extends AbstractInternalAntlrParser {
             	    							current,
             	    							"tasks",
             	    							lv_tasks_5_0,
-            	    							"uk.ac.kcl.inf.model25.projects.ProjectsLang.Task");
+            	    							"uk.ac.kcl.inf.models25.projects.ProjectsLang.Task");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -286,7 +286,7 @@ public class InternalProjectsLangParser extends AbstractInternalAntlrParser {
             	    							current,
             	    							"people",
             	    							lv_people_6_0,
-            	    							"uk.ac.kcl.inf.model25.projects.ProjectsLang.Person");
+            	    							"uk.ac.kcl.inf.models25.projects.ProjectsLang.Person");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -516,7 +516,7 @@ public class InternalProjectsLangParser extends AbstractInternalAntlrParser {
             						current,
             						"effort",
             						lv_effort_9_0,
-            						"uk.ac.kcl.inf.model25.projects.ProjectsLang.Effort");
+            						"uk.ac.kcl.inf.models25.projects.ProjectsLang.Effort");
             					afterParserOrEnumRuleCall();
             				
 
@@ -566,7 +566,7 @@ public class InternalProjectsLangParser extends AbstractInternalAntlrParser {
             	    							current,
             	    							"effort",
             	    							lv_effort_11_0,
-            	    							"uk.ac.kcl.inf.model25.projects.ProjectsLang.Effort");
+            	    							"uk.ac.kcl.inf.models25.projects.ProjectsLang.Effort");
             	    						afterParserOrEnumRuleCall();
             	    					
 

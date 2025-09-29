@@ -8,7 +8,7 @@ options {
 }
 
 @lexer::header {
-package uk.ac.kcl.inf.model25.projects.parser.antlr.internal;
+package uk.ac.kcl.inf.models25.projects.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -16,7 +16,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package uk.ac.kcl.inf.model25.projects.parser.antlr.internal;
+package uk.ac.kcl.inf.models25.projects.parser.antlr.internal;
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -27,7 +27,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import uk.ac.kcl.inf.model25.projects.services.ProjectsLangGrammarAccess;
+import uk.ac.kcl.inf.models25.projects.services.ProjectsLangGrammarAccess;
 
 }
 
@@ -139,7 +139,7 @@ ruleProject returns [EObject current=null]
 							$current,
 							"tasks",
 							lv_tasks_5_0,
-							"uk.ac.kcl.inf.model25.projects.ProjectsLang.Task");
+							"uk.ac.kcl.inf.models25.projects.ProjectsLang.Task");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -159,7 +159,7 @@ ruleProject returns [EObject current=null]
 							$current,
 							"people",
 							lv_people_6_0,
-							"uk.ac.kcl.inf.model25.projects.ProjectsLang.Person");
+							"uk.ac.kcl.inf.models25.projects.ProjectsLang.Person");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -276,7 +276,7 @@ ruleTask returns [EObject current=null]
 						$current,
 						"effort",
 						lv_effort_9_0,
-						"uk.ac.kcl.inf.model25.projects.ProjectsLang.Effort");
+						"uk.ac.kcl.inf.models25.projects.ProjectsLang.Effort");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -300,7 +300,7 @@ ruleTask returns [EObject current=null]
 							$current,
 							"effort",
 							lv_effort_11_0,
-							"uk.ac.kcl.inf.model25.projects.ProjectsLang.Effort");
+							"uk.ac.kcl.inf.models25.projects.ProjectsLang.Effort");
 						afterParserOrEnumRuleCall();
 					}
 				)

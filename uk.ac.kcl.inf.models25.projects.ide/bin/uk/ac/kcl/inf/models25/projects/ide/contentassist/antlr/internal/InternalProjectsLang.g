@@ -8,7 +8,7 @@ options {
 }
 
 @lexer::header {
-package uk.ac.kcl.inf.model25.projects.ide.contentassist.antlr.internal;
+package uk.ac.kcl.inf.models25.projects.ide.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -16,7 +16,7 @@ import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 }
 
 @parser::header {
-package uk.ac.kcl.inf.model25.projects.ide.contentassist.antlr.internal;
+package uk.ac.kcl.inf.models25.projects.ide.contentassist.antlr.internal;
 
 import java.io.InputStream;
 import org.eclipse.xtext.*;
@@ -28,7 +28,7 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.DFA;
-import uk.ac.kcl.inf.model25.projects.services.ProjectsLangGrammarAccess;
+import uk.ac.kcl.inf.models25.projects.services.ProjectsLangGrammarAccess;
 
 }
 @parser::members {

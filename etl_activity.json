@@ -12,7 +12,7 @@
                     "id": "panel-xtext",
                     "name": "Xtext Grammar",
                     "ref": "xtext-grammar",
-                    "file": "uk.ac.kcl.inf.model25.projects/src/uk/ac/kcl/inf/model25/projects/ProjectsLang.xtext",
+                    "file": "uk.ac.kcl.inf.models25.projects/src/uk/ac/kcl/inf/models25/projects/ProjectsLang.xtext",
                     "editorPanel": "panel-projects",
                     "editorActivity": "activity-editor"
                 },
@@ -25,7 +25,7 @@
                     "id": "panel-generator",
                     "name": "Xtext generator",
                     "ref": "xtext-generator",
-                    "file": "uk.ac.kcl.inf.model25.projects/src/uk/ac/kcl/inf/model25/projects/generator/ProjectsLangGenerator.xtend"
+                    "file": "uk.ac.kcl.inf.models25.projects/src/uk/ac/kcl/inf/models25/projects/generator/ProjectsLangGenerator.xtend"
                 }
             ],
 
@@ -42,8 +42,8 @@
                     "sourceButton": "action-button",
 
                     "parameters": {
-                        "languageName": "uk.ac.kcl.inf.model25.projects.ProjectsLang",
-                        "baseName": "uk.ac.kcl.inf.model25.projects.foo",
+                        "languageName": "uk.ac.kcl.inf.models25.projects.ProjectsLang",
+                        "baseName": "uk.ac.kcl.inf.models25.projects.foo",
                         "extension": "projects",
                         "grammar": "panel-xtext",
                         "generator": "panel-generator"

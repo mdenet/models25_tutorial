@@ -1,4 +1,4 @@
-module uk.ac.kcl.inf.model25.projects.GenerateProjectsLang
+module uk.ac.kcl.inf.models25.projects.GenerateProjectsLang
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
@@ -10,7 +10,7 @@ Workflow {
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
-				baseName = "uk.ac.kcl.inf.model25.projects"
+				baseName = "uk.ac.kcl.inf.models25.projects"
 				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
@@ -31,7 +31,7 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
-			name = "uk.ac.kcl.inf.model25.projects.ProjectsLang"
+			name = "uk.ac.kcl.inf.models25.projects.ProjectsLang"
 			fileExtensions = "projects"
 
 			serializer = {

@@ -1,6 +1,6 @@
-grammar uk.ac.kcl.inf.model25.projects.ProjectsLang with org.eclipse.xtext.common.Terminals
+grammar uk.ac.kcl.inf.models25.projects.ProjectsLang with org.eclipse.xtext.common.Terminals
 
-generate projectsLang "http://www.ac.uk/kcl/inf/model25/projects/ProjectsLang"
+generate projectsLang "http://www.ac.uk/kcl/inf/models25/projects/ProjectsLang"
 
 Project:
 	'project' title=STRING 

@@ -1,4 +1,4 @@
-package uk.ac.kcl.inf.model25.projects.ide.contentassist.antlr.internal;
+package uk.ac.kcl.inf.models25.projects.ide.contentassist.antlr.internal;
 
 import java.io.InputStream;
 import org.eclipse.xtext.*;
@@ -10,7 +10,7 @@ import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.DFA;
-import uk.ac.kcl.inf.model25.projects.services.ProjectsLangGrammarAccess;
+import uk.ac.kcl.inf.models25.projects.services.ProjectsLangGrammarAccess;
 
 
 

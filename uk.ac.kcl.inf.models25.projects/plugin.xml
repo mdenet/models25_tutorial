@@ -3,8 +3,8 @@
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package
-			uri = "http://www.ac.uk/kcl/inf/model25/projects/ProjectsLang"
-			class = "uk.ac.kcl.inf.model25.projects.projectsLang.ProjectsLangPackage"
+			uri = "http://www.ac.uk/kcl/inf/models25/projects/ProjectsLang"
+			class = "uk.ac.kcl.inf.models25.projects.projectsLang.ProjectsLangPackage"
 			genModel = "model/generated/ProjectsLang.genmodel" />
 	</extension>
 </plugin>

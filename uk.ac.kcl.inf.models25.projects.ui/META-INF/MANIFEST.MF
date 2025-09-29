@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: uk.ac.kcl.inf.model25.projects.ui
+Automatic-Module-Name: uk.ac.kcl.inf.models25.projects.ui
 Bundle-ManifestVersion: 2
-Bundle-Name: uk.ac.kcl.inf.model25.projects.ui
+Bundle-Name: uk.ac.kcl.inf.models25.projects.ui
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: uk.ac.kcl.inf.model25.projects.ui; singleton:=true
+Bundle-SymbolicName: uk.ac.kcl.inf.models25.projects.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: uk.ac.kcl.inf.model25.projects,
- uk.ac.kcl.inf.model25.projects.ide,
+Require-Bundle: uk.ac.kcl.inf.models25.projects,
+ uk.ac.kcl.inf.models25.projects.ide,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,
@@ -18,7 +18,7 @@ Require-Bundle: uk.ac.kcl.inf.model25.projects,
  org.eclipse.xtext.builder
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: uk.ac.kcl.inf.model25.projects.ui.internal,
- uk.ac.kcl.inf.model25.projects.ui.contentassist,
- uk.ac.kcl.inf.model25.projects.ui.quickfix
-Bundle-Activator: uk.ac.kcl.inf.model25.projects.ui.internal.ProjectsActivator
+Export-Package: uk.ac.kcl.inf.models25.projects.ui.internal,
+ uk.ac.kcl.inf.models25.projects.ui.contentassist,
+ uk.ac.kcl.inf.models25.projects.ui.quickfix
+Bundle-Activator: uk.ac.kcl.inf.models25.projects.ui.internal.ProjectsActivator

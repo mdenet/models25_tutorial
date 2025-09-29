@@ -1,4 +1,4 @@
-package uk.ac.kcl.inf.model25.projects.parser.antlr.internal;
+package uk.ac.kcl.inf.models25.projects.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
