@@ -1,6 +1,6 @@
-# FAME'24 MDE Hands-On Session
+# model25'24 MDE Hands-On Session
 
-This repository has been set up for a hands-on session during the [1st International School on Foundations and Advances of Model-Based Engineering](https://fame-school.github.io/). The purpose of the session is to give you basic hands-on experience of some MDE tools and techniques.
+This repository has been set up for a hands-on session during the [1st International School on Foundations and Advances of Model-Based Engineering](https://model25-school.github.io/). The purpose of the session is to give you basic hands-on experience of some MDE tools and techniques.
 
 ## Getting started
 
