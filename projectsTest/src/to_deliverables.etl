@@ -2,7 +2,7 @@ rule Project2Project
 	transform s : Source!Project
 	to t : Target!Project {
 
-	t.title = s.title;
+	t.title = s.title + " Project";
 
 	// Transform the tasks of the source
 	// project using the Task2Deliverable
@@ -25,6 +25,9 @@ rule Task2Deliverable
 	// effort in the task
 	d.lead ::= t.effort.sortBy(e|-e.percentage).
 		first()?.person;
+	
+	// TODO: Add report authors	
+	// HINT: Use something like d.authors = t.effort.person.name.concat("; ");
 }
 
 // @lazy means that persons will be transformed 
