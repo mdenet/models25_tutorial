@@ -126,4 +126,5 @@ Many people have helped create the platform and tools for this exercise. I would
 - Will Barnett, who built the [MDENet Education Platform](https://ep.mde-network.org) building on the [Epsilon Playground](https://eclipse.dev/epsilon/playground/).
 - Antonio Garcia-Dominguez, who came up with the Github workflow for rewriting links in README files that makes it easy to run the activities directly from a repository.
 - Dimitris Kolovos, Antonio Garcia-Dominguez, and Artur Boronat, who contributed loads of ideas and suggestions as part of the community steering board for the education platform.
+- Mehdi Mehtarizadeh, who worked on the platform as a research software engineer and in particular introduced more robust CI/CD support.
 - The [UK Engineering and Physical Sciences Research Council (EPSRC)](http://www.epsrc.ac.uk/), who funded the [MDENet network project](https://www.mde-network.org) and the development of the [MDENet Education Platform](https://ep.mde-network.org).
