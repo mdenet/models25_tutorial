@@ -5,7 +5,7 @@
             "title": "Define your language",
             "icon": "xtext",
 
-            "tools": ["https://ep.mde-network.org/tools/xtext/xtext_tool.json"],
+            "tools": ["{{BASE-URL}}:8074/xtext_tool.json"],
 
             "panels": [
                 {
@@ -59,9 +59,9 @@
             "icon": "xtext",
 
             "tools": ["{{ID-panel-projects}}/editor_tool.json", 
-                      "https://ep.mde-network.org/tools/emf/emf_tool.json",
-                      "https://ep.mde-network.org/tools/emfatic/emfatic_tool.json",
-                      "https://ep.mde-network.org/tools/epsilon/tools"],
+                      "{{BASE-URL}}:8073/emf_tool.json",
+                      "{{BASE-URL}}:8071/emfatic_tool.json",
+                      "{{BASE-URL}}:8070/tools"],
 
             "panels": [
                 {
