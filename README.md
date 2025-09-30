@@ -1,17 +1,28 @@
-# models25'24 MDE Hands-On Session
+# MODELS'25 Tutorial "Using, and contributing to, the MDENet education platform for teaching MDE"
 
-This repository has been set up for a hands-on session during the [1st International School on Foundations and Advances of Model-Based Engineering](https://models25-school.github.io/). The purpose of the session is to give you basic hands-on experience of some MDE tools and techniques.
+This repository has been set up for a tutorial during the [ACM / IEEE 28th International Conference on Model Driven Engineering Languages and Systems (MODELS'25)](https://2025.models-conf.com/). The tutorial aims to show how the MDENet education platform can be used by students, teachers, and how you can contribute to the platform itself.
+
+This repository contains two example activities that can be run using the MDENet education platform. The platform itself is described in detail in a [SoSyM tools paper](https://doi.org/10.1007/s10270-025-01292-3). It is hosted at https://ep.mde-network.org, where you can also run example activities without requiring a separate repository. The implementation of the education platform can be found on [GitHub](https://github.com/mdenet/educationplatform-docker) and you are welcome to run your own instance or use the [publicly hosted instance](https://ep.mde-network.org).
 
 ## Getting started
 
-You can see this repository, so you have already managed to get through the first step of the activity: to get hold of your own repository. Before you can take the next step, we need to take one more preparation step. This would normally run automatically, but due to a recent bug in Github Classroom, you will need to do a bit of work yourself:
+You can see this repository, so you have already managed to get through the first step of the activity: to get hold of your own repository. Before you can take the next step, we need to take one more preparation step: we need to create a URL that tells the education platform which activity to run.
 
-1. Open [update-private-repo-link.yml](.github/workflows/update-private-repo-link.yml) and click on the edit button in the top right corner: ![pen icon](images/pen_icon.PNG).
-2. Add a space at the top of the file, then remove that space again. This means the file remains unchanged, but you have now enabled the "Commit" button.
-3. Click the "Commit" button to save the file into your repository. Accept the standard commit message and commit directly to `main`. This will trick Github into refreshing its caches and noticing the workflow defined in this file.
-4. Got to the `Actions` tab, then click on `Update privaterepo in README` in the left-hand side menu. Run the workflow from the `Run workflow` dropdown on the right-hand side.
-5. Return to the main page for the repository. Wait and refresh this page until you can see the message below. This indicates that Github has correctly modified this README file and that all links provided below have been customised for your personal use.
+This repository includes a GitHub Action that is set up to run automatically when the repository is first created. The action will rewrite this README file so that the links in the README will directly open the correct activity. You can see if the action has run by reloading the main page of the repository and checking if the message below is visible as the last commit message.
 ![Github message on successful preparation of the repository](images/readme_rewrite_success.PNG)
+
+Unfortunately, since 2024, there has been a bug in GitHub Classroom which prevents GitHub Actions to run in new repositories created via GitHub Classroom. As a result, the action we have provided will likely not run automatically and your README file will not be rewritten automatically. I have filed a bug report (and I'm not alone in this), but GitHub haven't been overly responsive. Here are two workarounds to try out:
+
+1. You may be able to get GitHub to allow running the action manually. Follow these steps to try this. It is possible that this will not work. In that case, please try the second approach.
+
+    1. Open [update-private-repo-link.yml](.github/workflows/update-private-repo-link.yml) and click on the edit button in the top right corner: ![pen icon](images/pen_icon.PNG).
+    2. Add a space at the top of the file, then remove that space again. This means the file remains unchanged, but you have now enabled the "Commit" button.
+    3. Click the "Commit" button to save the file into your repository. Accept the standard commit message and commit directly to `main`. This will trick Github into refreshing its caches and noticing the workflow defined in this file.
+    4. Got to the `Actions` tab, then click on `Update privaterepo in README` in the left-hand side menu. Run the workflow from the `Run workflow` dropdown on the right-hand side.
+    5. Return to the main page for the repository. Wait and refresh this page until you can see the message below. This indicates that Github has correctly modified this README file and that all links provided below have been customised for your personal use.
+    ![Github message on successful preparation of the repository](images/readme_rewrite_success.PNG)
+
+2. Use the [EP URL generator](https://international.mde-network.org/ep_url/) to produce the correct URL for your activity. This will ask you for the URL of your repository (use the text from your browser's address bar) and the path to the activity description -- use the name of the file given for the respective activities below. You can then click on the button to open the education platform with your learning activity.
 
 ## Exercises
 
@@ -19,7 +30,7 @@ You can see this repository, so you have already managed to get through the firs
 
 In this step, you will generate and explore a simple domain-specific modelling language (DSML) with a textual concrete syntax. You will use [Xtext](https://www.eclipse.org/Xtext/) to create the DSML. We will only use the most basic features of Xtext; it can do much more. Check out the [link](https://www.eclipse.org/Xtext/) to find out more.
 
-> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/basic_xtext_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. You will be asked to sign in to Github; the first time you do this, you will be asked to give the MDENet Application access to your repository. You must do this to complete the activity. The application will only have access to this repository.
+> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/basic_xtext_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. If the link doesn't work correctly, use the [EP URL generator](https://international.mde-network.org/ep_url/) (see above) using the path `basic_xtext_activity.json`. You will be asked to sign in to Github; the first time you do this, you will be asked to give the MDENet Application access to your repository. You must do this to complete the activity. The application will only have access to this repository.
 
 #### Exploration
 
@@ -81,7 +92,7 @@ Explore your new language, checking out the meta-model, object diagram of models
 
 In this activity, you will take a model in your DSML and transform it into a different model. This is an important activity in MDE. It allows us to analyse and enrich models so that they can be used to automate a broad variety of activities in software development. Because we have limited time, we will experiment with a very simple transformation: we will generate a model listing the deliverables implied by a given project plan. We will also generate a list of authors for each deliverable.
 
-> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/etl_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. You will be asked to sign in to Github.
+> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/etl_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. If the link doesn't work correctly, use the [EP URL generator](https://international.mde-network.org/ep_url/) (see above) using the path `etl_activity.json`. You will be asked to sign in to Github.
 
 #### Exploration
 
