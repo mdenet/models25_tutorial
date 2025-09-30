@@ -60,18 +60,18 @@ We want to capture different types of people working on projects: some are regul
 
 1. Rename the existing `Person` rule to `Worker`. This syntax will now capture how regular workers are described.
 2. Create a new rule `Boss`. You can place it anywhere in the grammar file, as long as it doesn't come before the initial `Project` rule. It's good practice to put it in a sensible place -- for example, next to your `Worker` rule. The contents of your rule should be
-``
+```
 Boss:
   'boss' name=ID leads+=[Person] (',' 'and' leads+=[Person])*
 ;
-``
+```
 In other words, a boss is someone who leads other people.
 3. Add a new rule 
-``
+```
 Person:
   Boss | Worker
 ;
-``
+```
 stating that a person is either a boss or a worker.
 
 Click on the run button and wait until Xtext has successfully generated your new editor. If you get an error message, check if you have done everything correctly.
