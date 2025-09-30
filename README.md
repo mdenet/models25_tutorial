@@ -24,13 +24,17 @@ Unfortunately, since 2024, there has been a bug in GitHub Classroom which preven
 
 2. Use the [EP URL generator](https://international.mde-network.org/ep_url/) to produce the correct URL for your activity. This will ask you for the URL of your repository (use the text from your browser's address bar) and the path to the activity description -- use the name of the file given for the respective activities below. You can then click on the button to open the education platform with your learning activity.
 
-## Exercises
+## Example learning activities
 
-### Step 1: A simple domain-specific modelling language with Xtext
+In the tutorial, we first looked at some standard examples using [Epsilon](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/educationplatform-examples/main/epsilon-example/epsilon-example_activity.yml) and [OCL](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/educationplatform-examples/main/ocl/ocl_activity.json), respectively. These are always accessible from the publicly hosted instance of the education platform. Just like the activities in this repository, those standard activities are backed by a [GitHub repository](https://github.com/mdenet/educationplatform-examples/).
 
-In this step, you will generate and explore a simple domain-specific modelling language (DSML) with a textual concrete syntax. You will use [Xtext](https://www.eclipse.org/Xtext/) to create the DSML. We will only use the most basic features of Xtext; it can do much more. Check out the [link](https://www.eclipse.org/Xtext/) to find out more.
+Below, I describe the two activities that are contained in the current respository. These are both designed to teach language engineering, in particular the use of Xtext. The first activity looks at how a grammar can be used to generate a metamodel and an editor for a new domain-specific modelling language (DSML). The second activity looks at how ETL can be used to transform models in a student-defined DSML.
 
-> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/basic_xtext_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. If the link doesn't work correctly, use the [EP URL generator](https://international.mde-network.org/ep_url/) (see above) using the path `basic_xtext_activity.json`. You will be asked to sign in to Github; the first time you do this, you will be asked to give the MDENet Application access to your repository. You must do this to complete the activity. The application will only have access to this repository.
+### Activity 1: A simple domain-specific modelling language with Xtext
+
+In this activity, students generate and explore a simple DSML with a textual concrete syntax. Students use [Xtext](https://www.eclipse.org/Xtext/) to create the DSML. We will only use the most basic features of Xtext; it can do much more. Check out the [link](https://www.eclipse.org/Xtext/) to find out more.
+
+> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/basic_xtext_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. If the link doesn't work correctly, use the [EP URL generator](https://international.mde-network.org/ep_url/) (see above) using the path [`basic_xtext_activity.json`](/basic_xtext_activity.json). You will be asked to sign in to Github; the first time you do this, you will be asked to give the MDENet Application access to your repository. You must do this to complete the activity. The application will only have access to this repository.
 
 #### Exploration
 
@@ -38,21 +42,15 @@ After clicking on the link above (open it in a new tab so you can continue to vi
 
 For now, you will not make changes to this grammar. Instead, click on the little green "run" button in the top right corner and wait for a bit. When you do this, Xtext runs in the background and generates a lot of code from your grammar. This code implements a full IDE for your language.
 
-Once the generation process has finished (a little "Success" popup will appear in the top-right corner of the screen), you will be able to test out the language. For this, click on the link labelled "Try out your language" that has appeared in the left-hand side menu.
+Once the generation process has finished (a "Success" popup will appear in the top-right corner of the screen), you will be able to test out the language. For this, click on the link labelled "Try out your language" that has appeared in the left-hand side menu.
 
 This will open a new view (you will be asked again to "sign in with Github"): the left panel is the editor for your new language, the right panel allows us to visualise the internal representation of the language and your model.
 
 First, click on the little diagram button at the top of the *right* panel. This shows a class diagram -- explore it a bit. This is the "meta-model" of your language, sometimes also called the "abstract syntax". It shows the set of classes that Xtext instantiates every time it parses text in your new modelling language. Compare this back to your grammar (you can open a separate copy of the education platform in a separate tab) and see how Xtext has generated classes and attributes from the rules in the grammar. 
 
-> *Discussion task:* spend 5 minutes exploring this a bit and try to extract the rules that Xtext used to generate a meta-model from your grammar. Then, we will discuss this as a group.
+Next, look more closely at the left panel. This already contains some text in your new language. Notice the syntax highlighting automatically provided, make some changes, and see how the editor highlights if you are making an error. You can also use `Ctrl+Space` to invoke the auto-completion service. 
 
-Next, look more closely at the left panel. This already contains some text in your new language. Notice the syntax highlighting automatically provided, make some changes, and see how the editor highlights if you are making an error. You can also use `Ctrl+Space` to invoke the auto-completion service. Try this inside an effort statement (indicating who does which work at which percentage of their time) in the place where you have to provide the name of a person. Note how the editor offers you a list of all the names you have previously defined in the model.
-
-> *Discussion task:* Look back at the grammar. Can you spot how Xtext knows to do this? Note down your answer, then we will discuss as a group.
-
-Finally, click on the diagram button at the top of the *left* panel. This replaces the contents of the right panel with an object diagram, showing how the classes from the meta-model have been instantiated for your concrete model. Make some changes to the text on the left and regenerate the diagram to explore how the text is translated into a structure of objects. It's these objects that are used whenever we do anything with a model. For example, we will use them in the next step to translate our model into a different model. 
-
-Watch out for the different shape of the arrows between `Project` and `Task` and between `Effort` and `Person`, respectively. The former is called a "containment" reference. The rule is that every object in a model must be part of a tree of containment references and that there must be a unique root element for this tree; in our case this is the instance of `Project`.
+Finally, click on the diagram button at the top of the *left* panel. This replaces the contents of the right panel with an object diagram, showing how the classes from the meta-model have been instantiated for your concrete model. Make some changes to the text on the left and regenerate the diagram to explore how the text is translated into a structure of objects. 
 
 #### Make a change
 
@@ -78,21 +76,13 @@ stating that a person is either a boss or a worker.
 
 Click on the run button and wait until Xtext has successfully generated your new editor. If you get an error message, check if you have done everything correctly.
 
-> **Before** opening the generated editor, click on "Save". The education platform will add a commit to your repository with the changes you have made, so that you can work with them the next time you come back to the exercise. Only do this once you have successfully generated the editor to avoid committing incorrect code to your repository.
-
 Explore your new language, checking out the meta-model, object diagram of models, and code completion options. Can you see how Xtext has implemented the new `Person` rule in the meta-model?
 
-> *Discussion task:* Spend 5 minutes exploring and discussing your observations with your neighbour. We will then discuss as a group.
+### Activity 2: Let's transform our models
 
-#### Where next
+In this activity, students take a model in their DSML and transform it into a different model. Because we have limited time, we will experiment with a very simple transformation: we will generate a model listing the deliverables implied by a given project plan. We will also generate a list of authors for each deliverable.
 
-> *Extension task.* If you want to explore more beyond the contents of today's session, try making some more changes to the grammar. Can you add support for the salary a person gets per hour? Can you make it so that the salary is stored as a float number in the meta-model? Remember to click on "Save" before opening the generated editor.
-
-### Step 2: Let's transform our models
-
-In this activity, you will take a model in your DSML and transform it into a different model. This is an important activity in MDE. It allows us to analyse and enrich models so that they can be used to automate a broad variety of activities in software development. Because we have limited time, we will experiment with a very simple transformation: we will generate a model listing the deliverables implied by a given project plan. We will also generate a list of authors for each deliverable.
-
-> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/etl_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. If the link doesn't work correctly, use the [EP URL generator](https://international.mde-network.org/ep_url/) (see above) using the path `etl_activity.json`. You will be asked to sign in to Github.
+> You can [do this activity in your browser](https://ep.mde-network.org/?activities=https://raw.githubusercontent.com/mdenet/models25_tutorial/main/etl_activity.json&privaterepo=true). Click on the link and your browser will open the MDENet Education Platform with the activity pre-loaded. If the link doesn't work correctly, use the [EP URL generator](https://international.mde-network.org/ep_url/) (see above) using the path [`etl_activity.json`](/etl_activity.json). You will be asked to sign in to Github.
 
 #### Exploration
 
@@ -100,24 +90,16 @@ Again, you first see the Xtext grammar. Click the run button to generate the edi
 
 We now have more panels to explore. We still have the editor for our models in the top-left corner. In the top-right corner, we still have the diagram panel that can show us the meta-model for our language or the object-diagram for our current model as before. Below this, we have four panels for building our transformation:
 
-1. The middle left panel is where you will write your transformation code using the [Epsilon Transformation Language (ETL)](https://eclipse.dev/epsilon/doc/etl/). It already contains a basic transformation. Thank you to the Epsilon team, who have written this transformation as part of their library of examples.
+1. The middle left panel is where students write their transformation code using the [Epsilon Transformation Language (ETL)](https://eclipse.dev/epsilon/doc/etl/). It already contains a basic transformation. Thank you to the Epsilon team, who have written this transformation as part of their library of examples.
 2. Once the transformation has been run, you will be able to see an object diagram of the model your transformation has produced in the middle right panel, if the transformation has been successful.
 3. The lower left panel is a console view, which will show output from the running transformation, if any. This will show error messages, but you can also send text there by including print statements in your code. Try adding `"Hello World".println();` just above the line that reads `t.title = s.title;` and run the ETL script to see how this works.
 4. In the bottom right corner, you can see the definition of the meta-model of the language in which your output model will be produced. This tells you what classes, attributes, and relationships you need to fill out.
 
 Click on the green run button in the ETL panel and see what happens. Compare the object diagram of your model with the object diagram of the transformation result. Follow the ETL description to understand how this is produced.
 
-> *Discussion task:* Spend 5 minutes exploring the result of running the transformation and compare it to the transformation script. Note down your observations; you can also discuss these with your neighbour. We will then discuss as a group and try to make sense of the ETL script.
-
 #### Make a change
 
 Next, try to change the ETL script so that in addition to producing a `Deliverable` object for each `Task`, it fills in the `authors` attribute of the newly created `Deliverable` with a list of the persons working on the task sorted by the percentage of their time they have been working on the task. You can use the `concat(separator : String) : String` operation on the sequence of efforts to turn it into a suitable string.
-
-> *Discussion task:* Work with your neighbour for 10 minutes on this. Then, we will discuss as a group.
-
-#### Where next?
-
-> *Extension task.* If you want to explore more beyond the contents of today's session, try extending the transformation to compute the cost of each deliverable based on the salary and percentage of the people contributing to it. You will need to first extend the deliverables meta-model with an extra attribute to contain the cost information.
 
 ## Thank you
 
