@@ -37,7 +37,7 @@
 
                     "parameters": {
                         "languageName": "uk.ac.kcl.inf.models25.projects.ProjectsLang",
-                        "baseName": "uk.ac.kcl.inf.models25.projects.foo",
+                        "baseName": "uk.ac.kcl.inf.models25.projects",
                         "extension": "projects",
                         "grammar": "panel-xtext"
                     },
